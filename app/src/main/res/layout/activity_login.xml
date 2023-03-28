@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backround"
+    tools:context=".activity.LoginActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/logopnj" />
+
+        <EditText
+            android:id="@+id/edtL_Email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:drawableLeft="@drawable/ic_image_acount"
+            android:drawablePadding="20dp"
+            android:ems="15"
+            android:hint="Email"
+            android:padding="10dp"
+            android:textColorHint="#EFF5F5"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/edtL_Pass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:drawableLeft="@drawable/ic_image_password"
+            android:drawablePadding="20dp"
+            android:ems="15"
+            android:hint="Password"
+            android:textColorHint="#EFF5F5"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:textSize="20dp" />
+
+
+        <Button
+            android:backgroundTint="#DC3535"
+            android:id="@+id/btnL_Dangnhap"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="LOGIN"
+            android:textSize="16dp"
+             />
+
+        <TextView
+            android:id="@+id/tvQuenmatkhau"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:textColor="#EFF5F5"
+            android:text="Forgot your Password?"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:textColor="#EFF5F5"
+            android:text="WELCOME"
+            android:textSize="35dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:textColor="#EFF5F5"
+            android:text="Don't you have account?"
+            android:textSize="20dp" />
+
+        <Button
+            android:backgroundTint="#DC3535"
+            android:id="@+id/btnL_Dangky"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="SIGN UP"
+            android:textSize="16dp"
+            android:layout_marginBottom="30dp"
+             />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:textColor="#EFF5F5"
+            android:text="You don't want to continue?"
+            android:textSize="20dp" />
+
+        <Button
+            android:onClick="xulythoat_login"
+            android:backgroundTint="#DC3535"
+            android:id="@+id/btnL_Thoat"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="EXIT APP"
+            android:textSize="16dp"
+            tools:ignore="OnClick" />
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>

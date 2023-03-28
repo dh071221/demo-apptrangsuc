@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="#F8F988"
+    android:padding="20dp"
+    tools:context=".activity.FragmentC">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="About PNJ"
+        android:textColor="#F55050"
+        android:textSize="50dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edtS_Email"
+        android:drawablePadding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:textColorHint="@color/black"
+        android:drawableLeft="@drawable/cauchuyen"
+        android:hint="PNJ. Story"
+        android:textSize="30sp"
+        android:minHeight="48dp"
+        />
+
+    <EditText
+
+        android:drawablePadding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:textColorHint="@color/black"
+        android:drawableLeft="@drawable/tuyendung"
+        android:hint="Recruitment"
+        android:textSize="30sp"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:drawablePadding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:textColorHint="@color/black"
+        android:textSize="30sp"
+        android:hint="Export"
+        android:drawableLeft="@drawable/xuatkhau"
+        android:minHeight="48dp" />
+
+
+    <EditText
+        android:drawablePadding="20dp"
+        android:textColorHint="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:drawableLeft="@drawable/kinhdoanh"
+        android:hint="Wholesale Business"
+        android:textSize="30sp"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:drawablePadding="20dp"
+        android:textColorHint="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:drawableLeft="@drawable/kiemdinh"
+        android:hint="Diamond Test"
+        android:textSize="30sp"
+        android:minHeight="48dp" />
+
+
+
+
+</LinearLayout>

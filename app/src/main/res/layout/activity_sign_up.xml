@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@drawable/logosignup"
+    android:padding="20dp"
+    tools:context=".activity.SignUpActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="CREATE ACCOUNT LOG IN"
+        android:textColor="#F55050"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edtS_FullName"
+        android:drawablePadding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:hint="FullName"
+        android:drawableLeft="@drawable/ic_image_fullname"
+        android:minHeight="48dp" />
+
+
+    <EditText
+        android:id="@+id/edtS_Email"
+        android:drawablePadding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:hint="Email"
+        android:minHeight="48dp"
+        android:drawableLeft="@drawable/ic_image_acount"/>
+
+    <EditText
+        android:id="@+id/edtS_Pass"
+        android:drawablePadding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:hint="Password"
+        android:drawableLeft="@drawable/ic_image_password"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/edtS_EnterThePass"
+        android:drawablePadding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:hint="EnterThePassword"
+        android:drawableLeft="@drawable/ic_image_password"
+        android:minHeight="48dp" />
+
+
+    <EditText
+        android:drawablePadding="20dp"
+        android:id="@+id/edtS_Address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:hint="Address"
+        android:drawableLeft="@drawable/ic_image_address"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/edtS_Phone"
+        android:drawablePadding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:hint="Phone"
+        android:drawableLeft="@drawable/ic_image_telephone"
+        android:minHeight="48dp" />
+
+
+    <Button
+        android:backgroundTint="#DC3535"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginHorizontal="50dp"
+        android:text="REGISTER"
+        android:onClick="submit"
+         />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:textColor="#EFF5F5"
+        android:text="Do you already have an account"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/btnS_Dangnhap"
+        android:backgroundTint="#DC3535"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginHorizontal="50dp"
+        android:text="LOGIN"
+        android:onClick="login"
+         />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:textColor="#EFF5F5"
+        android:text="You don't want to continue?"
+        android:textSize="20dp" />
+
+    <Button
+        android:onClick="xulythoat_signup"
+        android:id="@+id/btnS_Thoat"
+        android:backgroundTint="#DC3535"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginHorizontal="50dp"
+        android:text="EXIT"
+        tools:ignore="OnClick" />
+
+</LinearLayout>
