@@ -14,6 +14,9 @@ import android.view.MenuItem;
 import com.example.apptrangsuc.R;
 
 
+import com.example.apptrangsuc.fragment.HomeFragment;
+import com.example.apptrangsuc.fragment.NotificationsFragment;
+import com.example.apptrangsuc.fragment.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
@@ -33,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         // bottom navigation
         bottomNavigationView = findViewById(R.id.bottomnavigation);
 
-        OpenFragment(new FragmentA());
+        OpenFragment(new HomeFragment());
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
@@ -41,16 +44,13 @@ public class MainActivity extends AppCompatActivity {
                 int id = item.getItemId();
                 switch (id) {
                     case R.id.mnuHome:
-                        fragment = new FragmentA();
-                        break;
-                    case R.id.mnuDashboard:
-                       fragment = new FragmentB();
-                        break;
-                    case R.id.mnuNotifications:
-                        fragment = new FragmentC();
+                        fragment = new HomeFragment();
                         break;
                     case R.id.mnuSuppervíor:
-                      fragment = new FragmentD();
+                        fragment = new ProfileFragment();
+                        break;
+                    case R.id.mnuNotifications:
+                      fragment = new NotificationsFragment();
                         break;
                 }
                 OpenFragment(fragment);

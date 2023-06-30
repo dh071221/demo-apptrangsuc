@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@drawable/ship"
+    android:padding="20dp"
+    tools:context=".activity.ThankYouOrderActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="Thank you for your order!"
+        android:textColor="#F55050"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:textStyle="bold"
+        android:drawablePadding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Delivery time: expected 3-7 days" />
+
+
+    <EditText
+        android:textStyle="bold"
+        android:drawablePadding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Shipping unit: PNJ logistics"
+        />
+
+    <EditText
+        android:textStyle="bold"
+        android:drawablePadding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Delivery driver code: #0123456789"
+        />
+
+    <EditText
+        android:textStyle="bold"
+        android:drawablePadding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Contact: 1800545457(Toll Free)"
+        />
+
+
+    <EditText
+        android:textStyle="bold"
+        android:drawablePadding="20dp"
+        android:id="@+id/edtS_Address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Please pay attention to your phone to receive the goods"
+        />
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:textColor="#EFF5F5"
+        android:text="Continue Shopping"
+        android:textSize="20dp" />
+
+
+    <Button
+        android:id="@+id/btntrangchu"
+        android:backgroundTint="#DC3535"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginHorizontal="50dp"
+        android:text="HOME"
+        />
+
+
+
+
+</LinearLayout>

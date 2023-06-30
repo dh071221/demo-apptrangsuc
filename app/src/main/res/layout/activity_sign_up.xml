@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="@drawable/logosignup"
+    android:background="@drawable/backround"
     android:padding="20dp"
     tools:context=".activity.SignUpActivity">
 
@@ -38,7 +38,7 @@
         android:layout_marginBottom="10dp"
         android:hint="Email"
         android:minHeight="48dp"
-        android:drawableLeft="@drawable/ic_image_acount"/>
+        android:drawableLeft="@drawable/ic_baseline_email_24"/>
 
     <EditText
         android:id="@+id/edtS_Pass"
@@ -47,6 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:hint="Password"
+        android:inputType="textPassword"
         android:drawableLeft="@drawable/ic_image_password"
         android:minHeight="48dp" />
 
@@ -56,6 +57,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
+        android:inputType="textPassword"
         android:hint="EnterThePassword"
         android:drawableLeft="@drawable/ic_image_password"
         android:minHeight="48dp" />
@@ -111,24 +113,6 @@
         android:text="LOGIN"
         android:onClick="login"
          />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:gravity="center"
-        android:textColor="#EFF5F5"
-        android:text="You don't want to continue?"
-        android:textSize="20dp" />
 
-    <Button
-        android:onClick="xulythoat_signup"
-        android:id="@+id/btnS_Thoat"
-        android:backgroundTint="#DC3535"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginHorizontal="50dp"
-        android:text="EXIT"
-        tools:ignore="OnClick" />
 
 </LinearLayout>

@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.example.apptrangsuc.R;
-import com.example.apptrangsuc.SERVER;
+import com.example.apptrangsuc.sever.SERVER;
 import com.example.apptrangsuc.model.SanPham;
 import com.squareup.picasso.Picasso;
 
@@ -57,6 +57,7 @@ public class SanPhamAdapter  extends  RecyclerView.Adapter<KHUNGNHIN_SanPham> im
     public void onBindViewHolder(@NonNull KHUNGNHIN_SanPham holder, int position) {
         SanPham sp = data.get(position);
         Picasso.get().load(SERVER.imagepath + sp.getHinhsanpham()).into(holder.hinhtrangsuc);
+
         holder.tvten.setText(sp.tensanpham );
         holder.tvgia.setText(sp.giasanpham+"");
 

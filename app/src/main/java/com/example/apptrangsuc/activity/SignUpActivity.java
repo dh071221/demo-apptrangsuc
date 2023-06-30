@@ -7,6 +7,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
+import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,6 +24,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.apptrangsuc.R;
+import com.example.apptrangsuc.sever.SERVER;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -28,7 +32,6 @@ import java.util.Map;
 public class SignUpActivity extends AppCompatActivity {
     private EditText edtS_Fullname, edtS_Email, edtS_Pass, edtS_EnterThePass, edtS_Address, edtS_Phone;
     private Button btnS_Register, btnS_Login, btnS_Exit;
-    private String URL = "http://192.168.7.163:3000/banhang/register.php";
     private String fullname, email, pass, enterpass, address, phone;
 
     @Override
@@ -37,7 +40,6 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
         // ánh xạ
         Anhxa();
-        addEvent();
         // xu ly dang ky
 
         // chuyen trang dang nhap
@@ -50,7 +52,7 @@ public class SignUpActivity extends AppCompatActivity {
         });
     }
 
-// xu ly dang ky
+    // xu ly dang ky
     public void submit(View view) {
         fullname = edtS_Fullname.getText().toString().trim();
         email = edtS_Email.getText().toString().trim();
@@ -59,15 +61,22 @@ public class SignUpActivity extends AppCompatActivity {
         address = edtS_Address.getText().toString().trim();
         phone = edtS_Phone.getText().toString().trim();
 
+        if (!isValidEmail(email)) {
+            Toast.makeText(this, "Invalid email format", Toast.LENGTH_LONG).show();
+            return;
+        }
+
         if (!pass.equals(enterpass)) {
             Toast.makeText(this, "Password Incorrect", Toast.LENGTH_LONG).show();
+            return;
         }
 
         if (!fullname.equals("") && !email.equals("") && !pass.equals("")
                 && !address.equals("") && !phone.equals("")) {
-            StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+            StringRequest stringRequest = new StringRequest(Request.Method.POST, SERVER.register, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
+                    Log.d("Response", response);
                     if (response.equals("success")) {
                         Toast.makeText(SignUpActivity.this, "Sign Up Success", Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
@@ -108,50 +117,22 @@ public class SignUpActivity extends AppCompatActivity {
         finish();
     }
 
-    private void addEvent() {
-        btnS_Exit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                xulythoat_signup();
-            }
-        });
-    }
-
-    // xu ly nut thoat
-    public void xulythoat_signup() {
-        AlertDialog.Builder exit = new AlertDialog.Builder(SignUpActivity.this);
-        exit.setTitle("Exit");
-        exit.setIcon(android.R.drawable.ic_dialog_info);
-        exit.setMessage("Do you want to exit the app?");
-        exit.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                finish();
-            }
-        });
-        exit.setNegativeButton("No", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                dialogInterface.dismiss();
-            }
-        });
-        exit.setCancelable(false);
-        exit.create().show();
-
-    }
-
     private void Anhxa() {
         edtS_Email = findViewById(R.id.edtS_Email);
         edtS_Pass = findViewById(R.id.edtS_Pass);
+        if (edtS_Pass != null) {
+            edtS_Pass.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+        }
         edtS_EnterThePass = findViewById(R.id.edtS_EnterThePass);
         edtS_Fullname = findViewById(R.id.edtS_FullName);
         edtS_Address = findViewById(R.id.edtS_Address);
         edtS_Phone = findViewById(R.id.edtS_Phone);
         btnS_Login = findViewById(R.id.btnS_Dangnhap);
-        btnS_Exit = findViewById(R.id.btnS_Thoat);
         fullname = email = pass = enterpass = address = phone = "";
-
     }
 
-
+    // Kiểm tra định dạng email
+    public boolean isValidEmail(String email) {
+        return Patterns.EMAIL_ADDRESS.matcher(email).matches();
+    }
 }

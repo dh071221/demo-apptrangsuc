@@ -96,24 +96,9 @@
             android:textSize="16dp"
             android:layout_marginBottom="30dp"
              />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:gravity="center"
-            android:textColor="#EFF5F5"
-            android:text="You don't want to continue?"
-            android:textSize="20dp" />
 
-        <Button
-            android:onClick="xulythoat_login"
-            android:backgroundTint="#DC3535"
-            android:id="@+id/btnL_Thoat"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:text="EXIT APP"
-            android:textSize="16dp"
-            tools:ignore="OnClick" />
+
+
 
 
 

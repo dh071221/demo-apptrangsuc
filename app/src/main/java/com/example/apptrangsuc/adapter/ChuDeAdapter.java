@@ -13,7 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.apptrangsuc.R;
-import com.example.apptrangsuc.SERVER;
+import com.example.apptrangsuc.activity.ProductByCategoriesActivity;
+import com.example.apptrangsuc.sever.SERVER;
 import com.example.apptrangsuc.model.ChuDe;
 import com.squareup.picasso.Picasso;
 
@@ -45,14 +46,11 @@ public class ChuDeAdapter extends RecyclerView.Adapter<KHUNGNHIN_CHUDE> {
         holder.itemView.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(context, ProductByCategoriesActivity.class);
+                intent.putExtra("idchude", cd.getIdchude());
+                context.startActivity(intent);
             }
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(context, SachTheoChuDeActivity.class);
-//                intent.putExtra("machude", cd.machude);
-//                context.startActivity(intent);
-//            }
+
         });
     }
 

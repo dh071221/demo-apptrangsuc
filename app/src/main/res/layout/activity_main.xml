@@ -57,11 +57,19 @@
             </LinearLayout>
 
             <ViewFlipper
-               android:id="@+id/viewflipper"
-               android:layout_width="match_parent"
-               android:layout_height="150dp">
+                android:id="@+id/viewflipper"
+                android:layout_width="match_parent"
+                android:layout_height="150dp">
 
-           </ViewFlipper>
+            </ViewFlipper>
+            <TextView
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:text="Categories"
+                android:textColor="#373334"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rcchude"
                 android:layout_marginTop="10dp"
@@ -80,8 +88,8 @@
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:layout_marginLeft="10dp"
-                    android:text="Best Selling Jewelry"
-                    android:textColor="#DC0000"
+                    android:text="Popular"
+                    android:textColor="#373334"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
                 <androidx.recyclerview.widget.RecyclerView

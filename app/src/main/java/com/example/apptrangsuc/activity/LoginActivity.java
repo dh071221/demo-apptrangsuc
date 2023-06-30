@@ -4,13 +4,18 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.service.controls.templates.ControlButton;
+import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -21,18 +26,17 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.apptrangsuc.R;
+import com.example.apptrangsuc.sever.SERVER;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity {
 
-
     Button btnL_Dangnhap, btnL_Dangky, btnL_Thoat;
-
     private EditText edtL_Email, edtL_Pass;
     private String email, password;
-    private String URL = "http://192.168.7.163:3000/banhang/login.php";
+    private TextView forgotPasswordTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,13 +44,6 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         Anhxa();
 
-        // xuly thoat
-        btnL_Thoat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                xulythoat();
-            }
-        });
 
         // chuyen trang dang ky
         btnL_Dangky.setOnClickListener(new View.OnClickListener() {
@@ -57,17 +54,40 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        forgotPasswordTextView = findViewById(R.id.tvQuenmatkhau);
+        forgotPasswordTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Chuyển đến trang ForgotPasswordActivity
+                Intent intent = new Intent(LoginActivity.this, ForgotPasswordActivity.class);
+                startActivity(intent);
+            }
+        });
+
         // xu ly dang nhap
         btnL_Dangnhap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 email = edtL_Email.getText().toString().trim();
                 password = edtL_Pass.getText().toString().trim();
+
+                // Kiểm tra định dạng email
+                if (!isValidEmail(email)) {
+                    Toast.makeText(LoginActivity.this, "Invalid email format", Toast.LENGTH_LONG).show();
+                    return;
+                }
+
                 if (!email.equals("") && !password.equals("")) {
-                    StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+                    StringRequest stringRequest = new StringRequest(Request.Method.POST, SERVER.login, new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
-                            if (response.equals("success")) {
+                            if (!response.isEmpty()) {
+
+                                SharedPreferences preferences = getSharedPreferences("email", Context.MODE_PRIVATE);
+                                SharedPreferences.Editor editor = preferences.edit();
+                                editor.putString("email", email);
+                                editor.apply();
+
                                 Toast.makeText(LoginActivity.this, "Logged in successfully", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                 startActivity(intent);
@@ -101,33 +121,16 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-    private void xulythoat() {
-        AlertDialog.Builder exit = new AlertDialog.Builder(LoginActivity.this);
-        exit.setTitle("Exit");
-        exit.setIcon(android.R.drawable.ic_dialog_info);
-        exit.setMessage("Do you want to exit the app?");
-        exit.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                finish();
-            }
-        });
-        exit.setNegativeButton("No", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                dialogInterface.dismiss();
-            }
-        });
-        exit.setCancelable(false);
-        exit.create().show();
-    }
-
     private void Anhxa() {
         email = password = "";
         edtL_Email = findViewById(R.id.edtL_Email);
         edtL_Pass = findViewById(R.id.edtL_Pass);
         btnL_Dangnhap = findViewById(R.id.btnL_Dangnhap);
-        btnL_Thoat = findViewById(R.id.btnL_Thoat);
         btnL_Dangky = findViewById(R.id.btnL_Dangky);
+    }
+
+    // Kiểm tra định dạng email
+    public boolean isValidEmail(String email) {
+        return Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
 }

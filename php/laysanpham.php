@@ -2,13 +2,13 @@
     require 'dbconnect.php';
 
     class trangsuc{
-        function __construct($idsanpham, $idchude, $tensanpham,$giasanpham,$hinhsanpham,$motasanpham){
+        function __construct($idsanpham,$idchude,$tensanpham,$hinhsanpham,$motasanpham,$giasanpham){
             $this->idsanpham = $idsanpham;
-            $this->idchude= $idchude;
+            $this->idchude = $idchude;
             $this->tensanpham = $tensanpham;
-            $this->giasanpham = $giasanpham;
             $this->hinhsanpham = $hinhsanpham;
             $this->motasanpham =$motasanpham;
+	    $this->giasanpham = $giasanpham;
         }
     }	
 
@@ -18,7 +18,7 @@
 
     while($row=mysqli_fetch_assoc($data))
     {
-        array_push($arraylist, new trangsuc($row["idsanpham"], $row["idchude"], $row["tensanpham"], $row["giasanpham"], $row["hinhsanpham"],$row["motasanpham"]));
+        array_push($arraylist, new trangsuc($row["idsanpham"], $row["idchude"], $row["tensanpham"],$row["hinhsanpham"],$row["motasanpham"],$row["giasanpham"]));
     }
 
     header("Content-type:application/json");

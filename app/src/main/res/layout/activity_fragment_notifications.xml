@@ -6,17 +6,17 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="#B4E4FF"
+    android:background="#F8F988"
     android:padding="20dp"
-    tools:context=".activity.FragmentD">
+    tools:context=".fragment.NotificationsFragment">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:text="Connect With Us"
+        android:text="About PNJ"
         android:textColor="#F55050"
-        android:textSize="40sp"
+        android:textSize="50dp"
         android:textStyle="bold" />
 
     <EditText
@@ -26,8 +26,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:textColorHint="@color/black"
-        android:drawableLeft="@drawable/facebook"
-        android:hint="PNJ Facebook"
+        android:drawableLeft="@drawable/cauchuyen"
+        android:hint="PNJ. Story"
         android:textSize="30sp"
         android:minHeight="48dp"
         />
@@ -39,8 +39,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:textColorHint="@color/black"
-        android:drawableLeft="@drawable/instagram"
-        android:hint="Instagram:pnj_jewelry"
+        android:drawableLeft="@drawable/tuyendung"
+        android:hint="Recruitment"
         android:textSize="30sp"
         android:minHeight="48dp" />
 
@@ -51,8 +51,8 @@
         android:layout_marginBottom="20dp"
         android:textColorHint="@color/black"
         android:textSize="30sp"
-        android:hint="PhuNhuanJewelry"
-        android:drawableLeft="@drawable/youtube"
+        android:hint="Export"
+        android:drawableLeft="@drawable/xuatkhau"
         android:minHeight="48dp" />
 
 
@@ -62,8 +62,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:drawableLeft="@drawable/gmail"
-        android:hint="Email: pnj@pnj.com.vn"
+        android:drawableLeft="@drawable/kinhdoanh"
+        android:hint="Wholesale Business"
         android:textSize="30sp"
         android:minHeight="48dp" />
 
@@ -73,8 +73,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:drawableLeft="@drawable/tiktok"
-        android:hint="Tiktok: @pnjofficialvn"
+        android:drawableLeft="@drawable/kiemdinh"
+        android:hint="Diamond Test"
         android:textSize="30sp"
         android:minHeight="48dp" />
 

@@ -1,4 +1,4 @@
-package com.example.apptrangsuc.activity;
+package com.example.apptrangsuc.fragment;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,7 +17,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -29,7 +28,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.apptrangsuc.R;
-import com.example.apptrangsuc.SERVER;
+import com.example.apptrangsuc.activity.ChiTietSanPhamActivity;
+import com.example.apptrangsuc.activity.CartActivity;
+import com.example.apptrangsuc.sever.SERVER;
 import com.example.apptrangsuc.adapter.ChuDeAdapter;
 
 import com.example.apptrangsuc.adapter.SanPhamAdapter;
@@ -43,7 +44,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class FragmentA extends Fragment {
+public class HomeFragment extends Fragment {
 
 
     RecyclerView rvChude;
@@ -59,7 +60,7 @@ public class FragmentA extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_fragment_a, container, false);
+        View view = inflater.inflate(R.layout.activity_fragment_home, container, false);
         // lay slide
         viewFlipper=view.findViewById(R.id.viewflipper);
         LoadViewFlipper();
@@ -75,6 +76,16 @@ public class FragmentA extends Fragment {
         rvChude= view.findViewById(R.id.rcchude);
         edtsearch=view.findViewById(R.id.edtsearch);
 
+        ImageView imgGioHang = view.findViewById(R.id.imggiohang);
+        imgGioHang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Xử lý khi người dùng nhấp vào ImageView "imggiohang"
+                // Ở đây, bạn có thể chuyển sang trang "CartActivity" bằng cách gọi phương thức startActivity() với Intent tương ứng
+                Intent intent = new Intent(getActivity(), CartActivity.class);
+                startActivity(intent);
+            }
+        });
 
         // lay chu de
         LoadChuDe();
@@ -172,8 +183,9 @@ public class FragmentA extends Fragment {
         adaptersp.setOnItemClickListener(new SanPhamAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(SanPham sp) {
-                Intent intent = new Intent(getContext(),ChiTietSanPhamActivity.class);
-                //chuyền du lieu
+                Intent intent = new Intent(getContext(), ChiTietSanPhamActivity.class);
+                //truyền du lieu
+                intent.putExtra("id",sp.getIdsanpham());
                 intent.putExtra("name",sp.getTensanpham());
                 intent.putExtra("price",sp.getGiasanpham());
                 intent.putExtra("img",sp.getHinhsanpham());

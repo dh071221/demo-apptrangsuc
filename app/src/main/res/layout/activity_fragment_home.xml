@@ -10,16 +10,18 @@
         android:id="@+id/drawerlayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
-                app:title="HOME PAGE"
-                android:background="@color/teal_700"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize">
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/teal_700"
+                app:title="HOME PAGE">
 
             </androidx.appcompat.widget.Toolbar>
 
@@ -30,7 +32,6 @@
 
 
                 <EditText
-                   android:drawableRight="@drawable/ic_search"
                     android:id="@+id/edtsearch"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
@@ -39,6 +40,7 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="8dp"
+                    android:drawableRight="@drawable/ic_search"
                     android:drawablePadding="5dp"
                     android:hint="What do you want to buy..."
                     android:padding="5dp"
@@ -64,35 +66,46 @@
                 android:layout_height="150dp">
 
             </ViewFlipper>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Categories"
+                android:textColor="#373334"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rcchude"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="5dp"
                 android:layout_width="match_parent"
-                android:layout_height="100dp">
+                android:layout_height="100dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp">
 
             </androidx.recyclerview.widget.RecyclerView>
 
             <LinearLayout
-                android:background="#FFD56F"
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="#FFD56F"
+                android:orientation="vertical">
+
                 <TextView
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:layout_marginLeft="10dp"
-                    android:text="Best Selling Jewelry"
-                    android:textColor="#DC0000"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="Popular"
+                    android:textColor="#373334"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rcSanpham"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                </androidx.recyclerview.widget.RecyclerView>
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"></androidx.recyclerview.widget.RecyclerView>
             </LinearLayout>
         </LinearLayout>
 

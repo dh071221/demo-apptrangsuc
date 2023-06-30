@@ -9,13 +9,15 @@
     <ImageView
         android:id="@+id/imgChude"
         android:layout_width="50dp"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:src="@drawable/diamond" />
 
     <TextView
         android:id="@+id/tvChude"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:text="Diamond"/>
+        android:textSize="15dp"
+        android:text="Diamond"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold" />
 </LinearLayout>
